@@ -1,0 +1,40 @@
+body {
+    background-color: black;
+    color: blanchedalmond;
+}
+button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background-color: #461111;
+    font-size: 15px;
+    font-weight: 600;
+    color: white;
+    border-radius: 5px;
+    padding: 5px 25px;
+}
+
+#mainDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#infoDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+}
+
+
+/* maybe gameDiv and other child divs need a width */
+/* buttons may need gap */
+
+.buttonDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
