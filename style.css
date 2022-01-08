@@ -29,12 +29,48 @@ button {
     width: 60%;
 }
 
+#resultDiv {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-/* maybe gameDiv and other child divs need a width */
-/* buttons may need gap */
+#scoreTitles {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 
-.buttonDiv{
+}
+
+#textBox {
+    width: 100%;
     display: flex;
     justify-content: center;
+}
+
+#gameDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+}
+
+#scoreDiv {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+
+
+#buttonDiv{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
     align-items: center;
 }
