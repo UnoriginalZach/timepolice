@@ -6,8 +6,9 @@ var optionArray = [
   let playerSelection;
   let userScore = 0;
   let computerScore = 0;
-const userH1 = h1.querySelector('#userScore');
-const compH1 = h1.querySelector('#computerSocre');
+const userH1 = document.querySelector('#userScore');
+const compH1 = document.querySelector('#computerScore');
+const h4 = document.querySelector('#textEdit');
 let roundCount = 0;
 
 
@@ -18,26 +19,49 @@ let roundCount = 0;
   }
   
   function winner(playerSelection, computerSelection){
-    if (playerSelection === computerSelection) return console.log('you tie')
-    if (playerSelection === 'rock') {
-      if (computerSelection === 'paper')  return console.log('you lose');
-      else return console.log('you win');
+    if (playerSelection === computerSelection) {
+        ++computerScore
+        return h4.textContent = 'They Caught You';
     };
+
+    if (playerSelection === 'rock') {
+        if (computerSelection === 'paper')  {
+            ++computerScore;
+          return h4.textContent = 'They Wrote You Out of Existence';
+        }
+        else {
+            ++userScore;
+            return h4.textContent = 'You Avoided Them In Another Time And Solidified Your Reality';  
+        }
+    };
+
     if (playerSelection === 'paper') {
-      if (computerSelection === 'scissors')  return console.log('you lose');
-      else return console.log('you win');
+      if (computerSelection === 'scissors')  {
+            ++ computerScore;
+            return h4.textContent = 'They Wrote You Out of Existence';
+        }
+      else {
+          ++userScore;
+          return h4.textContent = 'You Avoided Them In Another Time And Solidified Your Reality';
+      }
     };
     if (playerSelection === 'scissors') {
-      if (computerSelection === 'rock')  return console.log('you lose');
-      else return console.log('you win');
+      if (computerSelection === 'rock')  {
+          ++ computerScore;
+          return h4.textContent = 'They Wrote You Out of Existence';
+      }
+      else {
+          ++userScore;
+          return h4.textContent = 'You Avoided Them In Another Time And Solidified Your Reality';
+      }
     };
-  }
+  };
   
-  function anotherRound(playAgain) {
-    if (playAgain === 'y' || 'yes') return true;
-    else return false;
+//   function anotherRound(playAgain) {
+//     if (playAgain === 'y' || 'yes') return true;
+//     else return false;
   
-  }
+//   }
 
 
 
@@ -57,8 +81,7 @@ buttons.forEach((button) => {
     //function for  nesting if statements to see who wins
     winner(playerSelection, computerSelection);
     // prints out winner
-    if (roundCount > 5) {
-        game(playerSelection)
-    }
+    userH1.textContent = userScore
+    compH1.textContent = computerScore
   }
   game()
